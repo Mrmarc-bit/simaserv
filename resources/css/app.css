@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Outfit', sans-serif;
+    --color-primary: #3b82f6;
+    --color-secondary: #60a5fa;
+}
+
+@layer base {
+    body {
+        @apply font-sans bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen text-slate-900 antialiased leading-relaxed;
+    }
+    h1, h2, h3, h4 {
+        @apply text-blue-900 font-bold mb-4;
+    }
+}
+
+@layer components {
+    .glass {
+        @apply bg-white/75 backdrop-blur-md border border-white/40 shadow-xl rounded-2xl;
+    }
+    .btn {
+        @apply inline-block px-7 py-3 rounded-full font-semibold transition-all duration-200 border-none cursor-pointer text-[0.95rem];
+    }
+    .btn-primary {
+        @apply bg-gradient-to-r from-blue-500 to-blue-400 text-white shadow-lg shadow-blue-500/30 hover:-translate-y-0.5 hover:shadow-blue-500/40;
+    }
+    .btn-danger {
+        @apply bg-red-100 text-red-500 hover:bg-red-200;
+    }
+    .btn-block {
+        @apply w-full text-center block;
+    }
+    
+    /* Form Elements */
+    .form-group {
+        @apply mb-5;
+    }
+    .form-group label {
+        @apply block mb-2 font-medium text-slate-700;
+    }
+    input[type="text"], input[type="email"], input[type="password"], select, textarea {
+        @apply w-full p-3.5 border border-slate-300 rounded-xl bg-white/60 font-sans text-base transition-all duration-200;
+    }
+    input:focus, select:focus, textarea:focus {
+        @apply outline-none border-blue-500 bg-white ring-2 ring-blue-500/20;
+    }
+
+    /* Badges */
+    .badge {
+        @apply px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
+    }
+    .status-menunggu { @apply bg-sky-100 text-sky-600; }
+    .status-diperiksa { @apply bg-yellow-100 text-yellow-600; }
+    .status-diperbaiki { @apply bg-green-100 text-green-600; }
+    .status-selesai { @apply bg-blue-100 text-blue-600; }
+    .status-diambil { @apply bg-gray-100 text-gray-700; }
+
+    /* Navbar Brand */
+    .brand {
+        @apply text-2xl font-bold text-blue-500 no-underline;
+    }
+    .nav-link {
+        @apply text-slate-500 font-medium hover:text-blue-500 transition-colors ml-6;
+    }
+}

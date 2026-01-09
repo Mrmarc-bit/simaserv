@@ -1,0 +1,146 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --secondary: #60a5fa;
+    --bg-start: #f0f9ff;
+    --bg-end: #dfefff;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Glassmorphism Card */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+}
+
+.btn-danger {
+    background: #fee2e2;
+    color: var(--danger);
+}
+.btn-danger:hover {
+    background: #fecaca;
+}
+
+.btn-block { width: 100%; display: block; text-align: center; }
+
+/* Typography */
+h1, h2, h3, h4 { margin-top: 0; color: #1e3a8a; }
+.text-muted { color: var(--text-muted); }
+.text-center { text-align: center; }
+.text-sm { font-size: 0.875rem; }
+.font-bold { font-weight: 700; }
+
+/* Layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+.brand { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+.nav-link { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
+.nav-link:hover { color: var(--primary); }
+
+/* Forms */
+.form-group { margin-bottom: 1.25rem; }
+label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-main); }
+input, select, textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.6);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+}
+
+/* Status Badges */
+.badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.status-menunggu { background: #e0f2fe; color: #0284c7; }
+.status-diperiksa { background: #fef9c3; color: #ca8a04; }
+.status-diperbaiki { background: #dcfce7; color: #16a34a; }
+.status-selesai { background: #dbeafe; color: #2563eb; } /* Blue for completed success */
+.status-diambil { background: #f3f4f6; color: #374151; }
+
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: 1rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
+.table th { font-weight: 600; color: var(--text-muted); font-size: 0.875rem; }
+
+/* Dashboard Grids */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+.stat-card { padding: 1.5rem; display: flex; flex-direction: column; }
+.stat-value { font-size: 2.5rem; font-weight: 700; color: var(--primary); line-height: 1; margin-bottom: 0.5rem; }
+.stat-label { color: var(--text-muted); font-size: 0.875rem; font-weight: 500; }
+
+.shadow-soft { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+
+/* Grid Helper */
+.grid { display: grid; gap: 1rem; }
+
+/* Modern Footer - Reference Match */
+
